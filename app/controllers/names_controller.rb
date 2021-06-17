@@ -19,6 +19,12 @@ class NamesController < ApplicationController
   end
   
   def password_check
-    render json: {message: "askdfasdf"}
+    correct_username = "hugh"
+    correct_password = "swordfish"
+
+    username_input = params[:username_input]
+    password_input = params[:password_input]
+    
+    render json: password_input
   end
 end
