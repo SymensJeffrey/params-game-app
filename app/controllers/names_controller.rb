@@ -25,6 +25,11 @@ class NamesController < ApplicationController
     username_input = params[:username_input]
     password_input = params[:password_input]
     
-    render json: password_input
+    if username_input == correct_username && password_input == correct_password
+      message = "Valid Credintials"
+    else
+      message = "Invalid credentials"
+    end
+    render json: {answer: message}
   end
 end
