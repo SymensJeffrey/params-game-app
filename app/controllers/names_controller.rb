@@ -6,9 +6,16 @@ class NamesController < ApplicationController
   end
 
   def url_segment_number_guess
-    # answer = 36
-    # if :userguess.to<
-    render json: params[:user_guess]
+    answer = 36
+    guess = params[:user_guess].to_i
+    if guess < answer
+      message = "to low"
+    elsif guess > answer
+      message = "to high"
+    else
+      message = "Correct"
+    end
+    render json: message
   end
   
 end
