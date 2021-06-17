@@ -18,4 +18,7 @@ class NamesController < ApplicationController
     render json: message
   end
   
+  def password_check
+    render json: {message: "askdfasdf"}
+  end
 end
